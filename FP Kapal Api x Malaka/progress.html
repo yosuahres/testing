@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LiteraTrack</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload = function () {
+        // Retrieve tasks from sessionStorage
+        let tasksDone = JSON.parse(sessionStorage.getItem("tasksDone")) || []; // If no tasks saved, start with an empty array
+
+        // If tasks are recorded, show them
+        if (tasksDone.length > 0) {
+          let message =
+            "Today, you read:<br><br>" +
+            tasksDone.join("<br>") +
+            "<br><br> Keep progressing!"; // Join the tasks into a list
+          document.getElementById("recap").innerHTML = message; // Show tasks on the page
+        } else {
+          document.getElementById("recap").innerText = "No progress recorded."; // Show a message if no tasks are saved
+        }
+      };
+    </script>
+    <script defer src="progress.js"></script>
+  </head>
+
+  <body>
+    <div class="h1bar">
+      <h1>LiteraTrack</h1>
+    </div>
+    <div class="navbaritem">
+      <a href="file.html" class="navitem12">Home</a>
+      <a href="progress.html" class="navitem12">Progress</a>
+      <a href="aboutus.html" class="navitem12">About Us</a>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="progress-container">
+      <!-- Level 1 Section -->
+      <table>
+        <div class="level-section">
+          <tr>
+            <td>
+              <div class="outer">
+                <div class="inner">
+                  <div id="level1-progress">0%</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="160px"
+                    height="160px"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor1">
+                        <stop offset="0%" stop-color="#DA22FF" />
+                        <stop offset="100%" stop-color="#9733EE" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      id="circle1"
+                      cx="80"
+                      cy="80"
+                      r="70"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="recap" id="level1-recap">
+                <br>
+                <b>LEVEL I</b>
+                <br><br>
+                Hari ini, kamu telah membaca:<br />
+              </div>
+            </td>
+          </tr>
+        </div>
+      </table>
+
+      <!-- Level 2 Section -->
+      <table class="table-center">
+        <div class="level-section">
+          <tr>
+            <td>
+              <div class="outer">
+                <div class="inner">
+                  <div id="level2-progress">0%</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="160px"
+                    height="160px"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor2">
+                        <stop offset="0%" stop-color="#DA22FF" />
+                        <stop offset="100%" stop-color="#9733EE" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      id="circle2"
+                      cx="80"
+                      cy="80"
+                      r="70"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="recap" id="level2-recap">
+                <br>
+                <b>LEVEL 2</b>
+                <br><br>
+                Hari ini, kamu telah membaca:<br />
+              </div>
+            </td>
+          </tr>
+        </div>
+      </table>
+
+      <!-- Level 3 Section -->
+      <table class="table-bottom">
+        <div class="level-section">
+          <tr>
+            <td>
+              <div class="outer">
+                <div class="inner">
+                  <div id="level3-progress">0%</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="160px"
+                    height="160px"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor3">
+                        <stop offset="0%" stop-color="#DA22FF" />
+                        <stop offset="100%" stop-color="#9733EE" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      id="circle3"
+                      cx="80"
+                      cy="80"
+                      r="70"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="recap" id="level3-recap">
+                <br>
+                <b>LEVEL 3</b>
+                <br><br>
+                Hari ini, kamu telah membaca:<br />
+              </div>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </body>
+  <script src="topbutton.js"></script>
+</html>
